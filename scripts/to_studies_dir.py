@@ -12,12 +12,11 @@ import shutil
 def mover():
     work_dir = "/projects/b1108/data/Georgia/transitions/"
     for partic in os.listdir(work_dir):
-        if(partic[0:5] == "sub-t"):
-            wd = work_dir + partic + "/ses-1/"
-            for folder in os.listdir(wd): 
-             #checks to make sure it's a participant
-
-                try:
+        try:
+            if(partic[0:5] == "sub-t"):
+                wd = work_dir + partic + "/ses-1/"
+                for folder in os.listdir(wd): 
+                #checks to make sure it's a participant
                     source = wd + folder
                     print (source)
                     if(folder == "beh"):
@@ -34,8 +33,9 @@ def mover():
                         print(dest)
                         shutil.copytree(source, dest) 
                         print("Copied " + partic + " " + folder)
-                except:
-                    print("Unable to copy " + partic)
+            print("Copied succesfully: " + partic)
+        except:
+            print("FAILED: " + partic)
 
 
 def main():   
