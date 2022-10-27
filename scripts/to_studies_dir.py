@@ -18,22 +18,15 @@ def mover():
                 for folder in os.listdir(wd): 
                 #checks to make sure it's a participant
                     source = wd + folder
-                    print (source)
                     if(folder == "beh"):
-                        print("beh")
                         dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
                             + partic + "/ses-1/" + folder
-                        print(dest)
                         shutil.copytree(source, dest) 
-                        print("Copied " + partic + " " + folder)
                     else:
-                        print("other")
                         dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
                              + partic + "/ses-1/" + folder
-                        print(dest)
                         shutil.copytree(source, dest) 
-                        print("Copied " + partic + " " + folder)
-            print("Copied succesfully: " + partic)
+                print("Copied succesfully: " + partic)
         except:
             print("FAILED: " + partic)
 
