@@ -26,7 +26,7 @@ def mover():
                     else:
                         dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
                             + partic + "/" + ses + "/" + folder
-                        shutil.copytree(source, source) 
+                        shutil.copytree(source, dest) 
                         print("Copied succesfully: " + partic)
 
 
