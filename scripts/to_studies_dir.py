@@ -16,24 +16,19 @@ def mover():
         if(partic[0:5] == "sub-t"):
             for ses in os.listdir(work_dir + partic):
                 wd = work_dir + partic + "/" + ses
-                try:
-                    for folder in os.listdir(wd): 
-                        source = wd + "/" + folder
-                        try:
-                            if(folder == "beh"):
-                                dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
-                                    + partic + "/" + ses + "/" + folder
-                                shutil.copytree(source, dest) 
-                                print("Copied succesfully: " + source)
-                            else:
-                                dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
-                                    + partic + "/" + ses + "/" + folder
-                                shutil.copytree(source, source) 
-                                print("Copied succesfully: " + partic)
-                        except:
-                            print("Failed to copy " + source)
-                except:
-                    print("yikes " + folder)
+                for folder in os.listdir(wd): 
+                    source = wd + "/" + folder
+                    if(folder == "beh"):
+                        dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
+                            + partic + "/" + ses + "/" + folder
+                        shutil.copytree(source, dest) 
+                        print("Copied succesfully: " + source)
+                    else:
+                        dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
+                            + partic + "/" + ses + "/" + folder
+                        shutil.copytree(source, source) 
+                        print("Copied succesfully: " + partic)
+
 
 
 def main():   
