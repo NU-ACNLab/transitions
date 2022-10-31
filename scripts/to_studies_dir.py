@@ -18,7 +18,7 @@ def mover():
                 wd = work_dir + partic + "/" + ses
                 try:
                     for folder in os.listdir(wd): 
-                        source = wd + "/" folder
+                        source = wd + "/" + folder
                         try:
                             if(folder == "beh"):
                                 dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
