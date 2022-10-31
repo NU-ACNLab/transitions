@@ -18,16 +18,19 @@ def mover():
                 wd = work_dir + partic + "/" + ses
                 for folder in os.listdir(wd): 
                     source = wd + "/" + folder
-                    if(folder == "beh"):
-                        dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
-                            + partic + "/" + ses + "/" + folder
-                        shutil.copytree(source, dest) 
-                        print("Copied succesfully: " + source)
-                    else:
-                        dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
-                            + partic + "/" + ses + "/" + folder
-                        shutil.copytree(source, dest) 
-                        print("Copied succesfully: " + partic)
+                    try:
+                        if(folder == "beh"):
+                            dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/behavioral/"\
+                                + partic + "/" + ses + "/" + folder
+                            shutil.copytree(source, dest) 
+                            print("Copied succesfully: " + source)
+                        else:
+                            dest = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/"\
+                                + partic + "/" + ses + "/" + folder
+                            shutil.copytree(source, dest) 
+                            print("Copied succesfully: " + partic)
+                    except:
+                        print("unable to copy " + source)
 
 
 
