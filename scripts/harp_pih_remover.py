@@ -16,7 +16,8 @@ def list_participants():
     work_dir = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/work"
     for partic in os.listdir(work_dir):
         if(partic[0:5] == "sub-t"):
-		fpartic = partic.split("-")[1]
+            print(partic)
+            fpartic = partic.split("-")[1]
         	path = work_dir + "/" + partic + "/ses-1"
         	partic_path_dict[fpartic] = path
         
@@ -29,7 +30,6 @@ def list_participants():
                     none
 '''
 def remove_name(participant, directory):
-    for file in os.listdir(directory):
         parts = file.split("--", 1)
         new_name = participant + "--" + parts[-1]
         os.rename(directory + "/" + file, directory + "/" + new_name) 
