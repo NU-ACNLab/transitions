@@ -18,8 +18,8 @@ def list_participants():
         if(partic[0:5] == "sub-t"):
             print(partic)
             fpartic = partic.split("-")[1]
-        	path = work_dir + "/" + partic + "/ses-1"
-        	partic_path_dict[fpartic] = path
+            path = work_dir + "/" + partic + "/ses-1"
+            partic_path_dict[fpartic] = path
         
 '''
     Removes participant name from file names. 
