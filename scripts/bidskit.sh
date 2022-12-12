@@ -11,4 +11,4 @@
 # A regular comment in Bash
 
 module load dcm2niix
-bidskit -d /projects/b1108/studies/transitions/data/raw/neuroimaging/bids/sourcedata
+bidskit -d /projects/b1108/studies/transitions/data/raw/neuroimaging/bids

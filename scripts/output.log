@@ -1,0 +1,12 @@
+
+The following have been reloaded with a version change:
+  1) dcm2niix/v1.0.20211006 => dcm2niix/v1.0.20220720
+
+
+------------------------------------------------------------
+BIDSKIT 2022.10.13
+------------------------------------------------------------
+* sourcedata folder not found in /projects/b1108/studies/transitions/data/raw/neuroimaging/bids/sourcedata
+* bidskit expects this folder to exist and contain DICOM series
+* Please see the bidskit documentation at
+* https://github.com/jmtyszka/bidskit/blob/master/docs/QuickStart.md
