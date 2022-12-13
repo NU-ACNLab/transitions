@@ -172,11 +172,11 @@ def main():
     #asks user to input a directory
     path = input("Please enter the directory, without quotes:\n")
     
-    try:
-        list_participants()
-    except:
-        print("Partic dict failed to be created.")
-        sys.exit()
+    #try:
+    list_participants()
+    #except:
+        #print("Partic dict failed to be created.")
+        #sys.exit()
     for key, value in partic_path_dict.items():
         remove_name(key, value)
         makedir(key, value)
