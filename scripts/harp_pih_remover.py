@@ -63,7 +63,7 @@ def makedir(participant, directory):
 '''
 def rename_partic(participant, directory): 
     #search using glob on the pattern that Nina in the doc 
-    print(partic + " " + directory)
+    print(participant + " " + directory)
     print("in rename partic")
     files = glob.glob(directory + "/" + participant + "--FMAP1--GR--?_ph*")
     for file in files:
