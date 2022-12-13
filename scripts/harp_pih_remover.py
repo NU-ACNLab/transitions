@@ -63,38 +63,45 @@ def makedir(participant, directory):
 '''
 def rename_partic(participant, directory): 
     #search using glob on the pattern that Nina in the doc 
+    print("in rename partic")
     files = glob.glob(directory + "/" + participant + "--FMAP1--GR--?_ph*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_phase1." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     files = glob.glob(directory + "/" + participant + "--FMAP2--GR--?_ph*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_phase2." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     files = glob.glob(directory + "/" + participant + "--FMAP1--GR--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_magnitude1." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     files = glob.glob(directory + "/" + participant + "--FMAP2--GR--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_magnitude2." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     files = glob.glob(directory + "/" + participant + "--MID1--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-mid_run-01_bold." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     files = glob.glob(directory + "/" + participant + "--MID2--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-mid_run-02_bold." + parts[1]
         print(directory + "/" + new_name)
@@ -103,6 +110,7 @@ def rename_partic(participant, directory):
     #REST1
     files = glob.glob(directory + "/" + participant + "--REST1--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-rest_run-01_bold." + parts[1]
         print(directory + "/" + new_name)
@@ -110,6 +118,7 @@ def rename_partic(participant, directory):
     #REST2
     files = glob.glob(directory + "/" + participant + "--REST2--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-rest_run-02_bold." + parts[1]
         print(directory + "/" + new_name)
@@ -117,6 +126,7 @@ def rename_partic(participant, directory):
     #REST3
     files = glob.glob(directory + "/" + participant + "--REST3--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-rest_run-03_bold." + parts[1]
         print(directory + "/" + new_name)
@@ -124,6 +134,7 @@ def rename_partic(participant, directory):
     #REST4
     files = glob.glob(directory + "/" + participant + "--REST4--EP_RM--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-rest_run-04_bold." + parts[1]
         print(directory + "/" + new_name)
@@ -131,6 +142,7 @@ def rename_partic(participant, directory):
     #T1W
     files = glob.glob(directory + "/" + participant + "--T1w--GR--*")
     for file in files:
+        print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_run-1_T1w." + parts[1]
         print(directory + "/" + new_name)
@@ -146,6 +158,7 @@ def rename_partic(participant, directory):
 '''   
 def move_to_folders(participant, directory):
     #move functional files
+    print("in move to folders")
     func_pattern = "sub-"+ participant + "_ses-1_task*"
     func_files = glob.glob(directory + "/" + func_pattern)
     for file in func_files:
