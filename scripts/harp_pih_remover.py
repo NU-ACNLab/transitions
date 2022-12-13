@@ -51,8 +51,7 @@ def makedir(participant, directory):
         os.mkdir(directory + "/anat/")
     if(not os.path.exists(directory + "/fmap/")):
         os.mkdir(directory + "/fmap/")
-    if(not os.path.exists(directory + "/beh/")):
-        os.mkdir(directory + "/beh/")
+
 '''
     Renames files all per the file renaming document from Nina
             Parameters:
