@@ -65,48 +65,48 @@ def rename_partic(participant, directory):
     #search using glob on the pattern that Nina in the doc 
     print(participant + " " + directory)
     print("in rename partic")
-    files = glob.glob(directory + "/" + participant + "--FMAP1--GR--?_ph*") + \ 
-            glob.glob(directory + "/" + participant + "--FMAP1*ph*")
+    files = glob.glob(directory + "/" + participant + "--FMAP1--GR--?_ph*") \ 
+            + glob.glob(directory + "/" + participant + "--FMAP1*ph*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_phase1." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
-    files = glob.glob(directory + "/" + participant + "--FMAP2--GR--?_ph*")  + \ 
-            glob.glob(directory + "/" + participant + "--FMAP2*ph*")
+    files = glob.glob(directory + "/" + participant + "--FMAP2--GR--?_ph*") \ 
+            + glob.glob(directory + "/" + participant + "--FMAP2*ph*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_phase2." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
-    files = glob.glob(directory + "/" + participant + "--FMAP1--GR--*")  + \ 
-            glob.glob(directory + "/" + participant + "--FMAP1*")
+    files = glob.glob(directory + "/" + participant + "--FMAP1--GR--*") \ 
+            + glob.glob(directory + "/" + participant + "--FMAP1*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_magnitude1." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
-    files = glob.glob(directory + "/" + participant + "--FMAP2--GR--*") +  \ 
-            glob.glob(directory + "/" + participant + "--FMAP2*")
+    files = glob.glob(directory + "/" + participant + "--FMAP2--GR--*") \ 
+            + glob.glob(directory + "/" + participant + "--FMAP2*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_magnitude2." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
-    files = glob.glob(directory + "/" + participant + "--MID1--EP_RM--*") + \ 
-            glob.glob(directory + "/" + participant + "--MID1*")
+    files = glob.glob(directory + "/" + participant + "--MID1--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--MID1*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
         new_name = "sub-" + participant + "_ses-1_task-mid_run-01_bold." + parts[1]
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
-    files = glob.glob(directory + "/" + participant + "--MID2--EP_RM--*") +  \ 
-            glob.glob(directory + "/" + participant + "--MID2*")
+    files = glob.glob(directory + "/" + participant + "--MID2--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--MID2*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
@@ -115,8 +115,8 @@ def rename_partic(participant, directory):
         os.rename(file, directory + "/" + new_name)  
 
     #REST1
-    files = glob.glob(directory + "/" + participant + "--REST1--EP_RM--*") +  \ 
-            glob.glob(directory + "/" + participant + "--REST1*")
+    files = glob.glob(directory + "/" + participant + "--REST1--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--REST1*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
@@ -124,8 +124,8 @@ def rename_partic(participant, directory):
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     #REST2
-    files = glob.glob(directory + "/" + participant + "--REST2--EP_RM--*") +  \ 
-            glob.glob(directory + "/" + participant + "--REST2*")
+    files = glob.glob(directory + "/" + participant + "--REST2--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--REST2*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
@@ -133,8 +133,8 @@ def rename_partic(participant, directory):
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name)  
     #REST3
-    files = glob.glob(directory + "/" + participant + "--REST3--EP_RM--*") + \ 
-            glob.glob(directory + "/" + participant + "--REST3*")
+    files = glob.glob(directory + "/" + participant + "--REST3--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--REST3*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
@@ -142,8 +142,8 @@ def rename_partic(participant, directory):
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     #REST4
-    files = glob.glob(directory + "/" + participant + "--REST4--EP_RM--*") + \ 
-            glob.glob(directory + "/" + participant + "--REST4*")
+    files = glob.glob(directory + "/" + participant + "--REST4--EP_RM--*") \ 
+            + glob.glob(directory + "/" + participant + "--REST4*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
@@ -151,8 +151,8 @@ def rename_partic(participant, directory):
         print(directory + "/" + new_name)
         os.rename(file, directory + "/" + new_name) 
     #T1W
-    files = glob.glob(directory + "/" + participant + "--T1w--GR--*") + \
-            glob.glob(directory + "/" + participant + "--T1w*")
+    files = glob.glob(directory + "/" + participant + "--T1w--GR--*") \
+            + glob.glob(directory + "/" + participant + "--T1w*")
     for file in files:
         print(file)
         parts = file.split(".", 1)
