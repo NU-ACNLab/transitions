@@ -16,4 +16,4 @@ singularity run --cleanenv -B /projects/b1108:/projects/b1108 \
 /projects/b1108/studies/transitions/data/raw/neuroimaging/bids \
 /projects/b1108/studies/transitions/data/processed/neuroimaging participant \
 --participant-label ${1} --fs-license-file /projects/b1108/software/freesurfer_license/license.txt \
---fs-no-reconall -w /projects/b1108/studies/transitions/data/processed/neuroimaging/work
+-w /projects/b1108/studies/transitions/data/processed/neuroimaging/work --skip_bids_validation
