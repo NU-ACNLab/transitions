@@ -7,7 +7,7 @@ subjects = glob.glob(subjectsPath)
 
 
 for subject in subjects:
-
+	print(subject)
 	#Edit 'ses-1' to be the same as your session
 	fmapsPath = os.path.join(subject, 'ses-1', 'fmap', '*.json')
 	fmaps = glob.glob(fmapsPath)
