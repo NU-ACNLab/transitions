@@ -13,7 +13,7 @@ partic_path_dict = {}
                     none
 '''
 def list_participants():
-    work_dir = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/work"
+    work_dir = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/rename"
     for partic in os.listdir(work_dir):
         if(partic[0:5] == "sub-t"):
             print(partic)

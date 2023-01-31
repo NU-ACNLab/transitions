@@ -13,5 +13,5 @@ module load singularity/latest
 echo "modules loaded"
 cd /projects/b1108
 
-singularity run --cleanenv -B /projects/b1108:/projects/b1108/ /projects/b1108/software/singularity_images/mriqc-latest.simg -v /projects/b1108/studies/transitions/data/raw/neuroimaging/bids -v /projects/b1108/studies/transitions/data/processed/neuroimaging/mriqc participant --participant-label ${1}
+singularity run --cleanenv -B /projects/b1108:/projects/b1108/ /projects/b1108/software/singularity_images/mriqc-latest.simg -v /projects/b1108/studies/transitions/data/raw/neuroimaging/bids/derivatives -v /projects/b1108/studies/transitions/data/processed/neuroimaging/mriqc participant --participant-label ${1}
 # change above to --clean-workdir so that the work directory is cleared and you save space
