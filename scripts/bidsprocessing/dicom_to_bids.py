@@ -17,7 +17,7 @@ for compressed in compressed_files:
     os.makedirs(compressed_path + subject, exist_ok=True)
     shutil.unpack_archive(compressed, compressed_path + subject)
 
-    if(!(os.path.exists(compressed_path + subject + "/" + subject))):
+    if(not(os.path.exists(compressed_path + subject + "/" + subject))):
         next_level = glob.glob(compressed_path + subject + "/*")[0]
         dest = compressed_path + subject + "/1"
         os.makedirs(dest, exist_ok=True)
