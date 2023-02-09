@@ -6,6 +6,8 @@
 #SBATCH --mem=10G
 #SBATCH -J python_caller
 
-echo python ${1} > return_file.txt
+#echo python ${1} > return_file.txt
+
+python dicom_to_bids.sh > return_file.txt
 
 
