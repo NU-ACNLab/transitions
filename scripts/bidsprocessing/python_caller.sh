@@ -6,4 +6,4 @@
 #SBATCH --mem=10G
 #SBATCH -J python_caller
 
-python ${1}
+echo python ${1} > return_file.txt
