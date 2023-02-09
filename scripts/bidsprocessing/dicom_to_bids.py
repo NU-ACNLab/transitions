@@ -5,7 +5,7 @@ import shutil
 
 ##Deal with that we're in an infinite loop
 compressed_path = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/bids/sourcedata/"
-compressed_files = glob.glob(compressed_path + "*" ) +
+compressed_files = glob.glob(compressed_path + "*" )
 
 
 for compressed in compressed_files:
