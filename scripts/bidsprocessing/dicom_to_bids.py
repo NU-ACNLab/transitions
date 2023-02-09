@@ -20,11 +20,11 @@ for compressed in compressed_files:
     shutil.unpack_archive(compressed, uncom_path + subject)
 
     if(not(os.path.exists(uncom_path + subject + "/" + subject))):
+        print("moving " + subject)
         next_level = glob.glob(uncom_path + subject + "/*")[0]
         dest = uncom_path + subject + "/1"
         os.makedirs(dest, exist_ok=True)
         for file in glob.glob(next_level + "/s*/*"):
-            print(file)
             shutil.move(file, dest)
         for folder in glob.glob(uncom_path + subject + "/e*/s*"):
             os.rmdir(folder)
