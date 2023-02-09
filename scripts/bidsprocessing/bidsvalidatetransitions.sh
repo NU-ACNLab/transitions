@@ -15,3 +15,4 @@ singularity exec --writable-tmpfs --cleanenv \
   /projects/b1108/software/singularity_images/validator_v1.9.3.sif \
   bids-validator /projects/b1108/studies/transitions/data/raw/neuroimaging/bids \
   --verbose
+  

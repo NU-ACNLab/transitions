@@ -28,6 +28,7 @@ for compressed in compressed_files:
             os.rmdir(folder)
         os.rmdir(glob.glob(compressed_path + subject + "/e*")[0])
     else:
+        
         print("You gotta do this one manually: " + subject)
 
 
