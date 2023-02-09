@@ -12,7 +12,7 @@
 
 
 
-cd /projects/b1108/studies/transitions2/data/raw/neuroimaging/bids/sourcedata/${1}
+cd /projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/${1}
 mkdir 1
 cd ${1}
 mv 3D/*/* ../1/
