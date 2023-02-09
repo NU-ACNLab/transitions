@@ -28,7 +28,7 @@ for compressed in compressed_files:
             shutil.move(file, dest)
         for folder in glob.glob(uncom_path + subject + "/e*/s*"):
             os.rmdir(folder)
-        os.rmdir(glob.glob(uncom_path + subject + "/e*")[0])
+        #os.rmdir(glob.glob(uncom_path + subject + "/e*")[0])
     else:
 
         print("You gotta do this one manually: " + subject)
