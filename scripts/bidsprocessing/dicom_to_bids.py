@@ -33,7 +33,7 @@ for compressed in compressed_files:
 
         print("You gotta do this one manually: " + subject)
     com_path = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/compressed/"
-    shutil.move(compressed, com_path + subject)
+    shutil.move(compressed, com_path)
 
     
 
