@@ -15,7 +15,6 @@ for compressed in compressed_files:
         subject = compressed.split("/")[-1][0:5].lower()
         print(subject)
         #unzip/untar into participant dir
-        os.makedirs(compressed_path + subject, exist_ok=True)
         uncom_path = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/"
         shutil.unpack_archive(compressed, uncom_path + subject)
         if(not(os.path.exists(uncom_path + subject + "/" + subject))):
