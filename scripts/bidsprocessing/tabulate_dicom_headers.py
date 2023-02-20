@@ -26,8 +26,7 @@ param_dict = {
     'RepetitionTime':[],
     'SequenceName':[],
     'SliceThickness':[],
-    'NDicoms':[]
-    }
+    'NDicoms':[]}
 
 
 def find_dicom_dir(subdirs):
@@ -37,10 +36,8 @@ def find_dicom_dir(subdirs):
         e_folder = glob.glob(subdir + "/e*")
         if((subdir + "/" + subject in sub_folder)):
             sequences = os.listdir(subdir + "/" + subject)
-                for seq in sequences:
-                    #by this point need to be at t1XXX/t1XXX/scan/MR format
-                    #call tabulate on a single scan
-                    tabulate(subject, seq)
+            for seq in sequences:
+            	tabulate(subject, seq)
         elif(len(e_folder) > 0):
             sequences = os.listdir(e_folder[0])
             for seq in sequences:
