@@ -12,7 +12,7 @@ import pandas as pd
 from datetime import datetime
 import glob
 
-    param_dict = {
+param_dict = {
     'subid':[],
     'sesid':[],
     'Modality':[],
