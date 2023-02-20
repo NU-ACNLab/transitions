@@ -32,16 +32,20 @@ param_dict = {
 def find_dicom_dir(subdirs):
     for subdir in subdirs: #for participant dir
         subject = subdir.split("/")[-1][0:5].lower()
+        print(subject)
         sub_folder = os.listdir(subdir) #previously sessions
         e_folder = glob.glob(subdir + "/e*")
+        print("length of e " + e_folder)
         if((subdir + "/" + subject in sub_folder)):
             sequences = os.listdir(subdir + "/" + subject)
             for seq in sequences:
+                print("call tab old methof")
             	tabulate(subject, seq)
         elif(len(e_folder) > 0):
             sequences = os.listdir(e_folder[0])
             for seq in sequences:
                 if(os.path.exists(seq + "/MR")):
+                    print("call tab new method")
                     tabulate(subject, seq + "/MR")
 
         else:
@@ -53,6 +57,7 @@ def tabulate(subject, dicomdir):
     sub = subject
     session = "ses-1" #will need to modify when there are multiple sessions
     if os.path.isdir(sesdir+'/SCANS/'+seq+'/DICOM/'):
+                    print("in if")
                     dcm_path = os.popen('find '+dicomdir+' -name "*MRDC*"').read().split("\n")[0] ## search for MRDC??
                     dicoms = os.popen('find '+dicomdir+' -name "*MRDC*"').read().split("\n")[:-1]
                     #if len(dcm_path) == 0:
