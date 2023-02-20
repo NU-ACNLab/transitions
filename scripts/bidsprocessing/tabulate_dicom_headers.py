@@ -110,11 +110,14 @@ def tabulate(subject, dicomdir):
                         ndicoms = len(dicoms)
                         param_dict['NDicoms'].append(ndicoms)
 
-
-if __name__ == '__main__':
+def main():
     indir = '/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed'
     subdirs = os.popen('find '+indir+' -maxdepth 1 -name "t1*"').read().split("\n")[:-1] ## participant directories. 
-
+    print(subdirs)
     find_dicom_dir(subdirs)
     param_df = pd.DataFrame.from_dict(param_dict)
     param_df.to_csv('/projects/b1108/studies/transitions2/data/raw/neuroimaging/meta/params_'+datetime.today().strftime('%Y-%m-%d')+'.csv', index=False)
+
+
+if __name__ == '__main__':
+    main()
