@@ -8,6 +8,6 @@
 
 #echo python ${1} > return_file.txt
 
-python dicom_to_bids.py > return_file.txt
+python unzip_dicoms.py > return_file.txt
 
 
