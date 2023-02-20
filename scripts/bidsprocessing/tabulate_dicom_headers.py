@@ -39,8 +39,8 @@ def find_dicom_dir(subdirs):
         if((subdir + "/" + subject in sub_folder)):
             sequences = os.listdir(subdir + "/" + subject)
             for seq in sequences:
-                print("call tab old methof")
-            	tabulate(subject, seq)
+                print("call tab old metho")
+                tabulate(subject, seq)
         elif(len(e_folder) > 0):
             sequences = os.listdir(e_folder[0])
             for seq in sequences:
