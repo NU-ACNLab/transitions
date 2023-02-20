@@ -42,7 +42,6 @@ def find_dicom_dir(subdirs):
                     #call tabulate on a single scan
                     tabulate(subject, seq)
         elif(len(e_folder) > 0):
-            #do things for new method.
             sequences = os.listdir(e_folder[0])
             for seq in sequences:
                 if(os.path.exists(seq + "/MR")):
