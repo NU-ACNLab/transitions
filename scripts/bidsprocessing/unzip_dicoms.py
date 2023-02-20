@@ -17,20 +17,23 @@ for compressed in compressed_files:
         #unzip/untar into participant dir
         uncom_path = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/"
         shutil.unpack_archive(compressed, uncom_path + subject)
-        if(not(os.path.exists(uncom_path + subject + "/" + subject))):
-            print("moving " + subject)
-            next_level = glob.glob(uncom_path + subject + "/*")[0]
-            dest = uncom_path + subject + "/1"
-            os.makedirs(dest, exist_ok=True)
-            for file in glob.glob(next_level + "/s*/*"):
-                shutil.move(file, dest)
-            for folder in glob.glob(uncom_path + subject + "/e*/s*"):
-                os.rmdir(folder)
-            #os.rmdir(glob.glob(uncom_path + subject + "/e*")[0])
-        else:
-            print("You gotta do this one manually: " + subject)
-        #com_path = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/compressed/"
         shutil.move(compressed, "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/compressed/complete")
+        '''
+        if(subject = "t1040"):
+            #MOVE MID1  MID2  REST3  REST4 to ses-1a, move everything to normal dir structure, 
+            #remove ses folders
+            source = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/t1040/t1040/ses-1b/*"
+            dest = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/t1040/t1040/ses-1a"
+            shutil.move(source, dest)
+        elif(subject = "t1023"):
+            #FMAP  REST3  REST4, move everything to normal dir structure, 
+            #rename FMAPS so I know which to use when....
+            #will need to script for this in the dicom to bids script
+            #remove ses folders
+            source = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/t1040/t1040/ses-1b/*"
+            dest = "/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed/t1040/t1040/ses-1a"
+            shutil.move(source, dest)
+            '''
 
     
 

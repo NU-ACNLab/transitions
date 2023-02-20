@@ -1,7 +1,7 @@
 ### This script is designed to replace heudiconv because it is bugging out in
 ### far too many ways.
 ###
-### Ellyn Butler
+### kat seitz and Ellyn Butler
 ### Feb 16, 2023
 
 import pydicom #https://github.com/pydicom/pydicom
@@ -29,7 +29,7 @@ ses = args.ss
 def convert_dicoms(dicomdir, bidsdir, modality):
     converter = Dcm2niix()
     converter.inputs.source_dir = dicomdir
-    converter.inputs.compression = 5
+    converter.inputs.compression = 5 #?? What does this correspond to
     converter.inputs.output_dir = bidsdir+'/'+modality
     converter.run()
 
@@ -165,6 +165,9 @@ def curate_scan(sub, ses, scan, indir):
             nifti = os.popen('find '+bidsdir+'/'+modality+' -name "*Mb8_rest_HCP*.nii.gz"').read().split("\n")[0]
             os.rename(nifti, bidsdir+'/'+modality+'/'+sub+'_'+ses+'_task-rest_bold.nii.gz')
 
+
+
+#need to change below, MWMH path specific
 scans = os.listdir(indir+'/'+sub+'/'+ses+'/SCANS/')
 scans = [item for item in scans if 'DICOM' in os.listdir(indir+'/'+sub+'/'+ses+'/SCANS/'+item)]
 for scan in scans:
