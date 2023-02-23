@@ -9,8 +9,10 @@
 module purge
 module load dcm2niix
 
-DIR=$1
-SUB=$2
+DIR=1 #check if $ needed. 
+echo $DIR
+SUB=2
+echo $SUB
 
 scan_folders = /projects/b1108/studies/transitions/data/raw/neuroimaging/bids/sourcedata/$DIR* 
 
@@ -20,7 +22,5 @@ for SCAN in scan_folders; do # Whitespace-safe but not recursive.
     dcm2niix -b, y -z o -w 1 -f %n--%d--s%s--e%e -o #$OUTPUT $SCAN
 done
 
-#/var/spool/slurmd/job4423074/slurm_script: line 12: DIR: command not found
-#/var/spool/slurmd/job4423074/slurm_script: line 13: SUB: command not found
-#/var/spool/slurmd/job4423074/slurm_script: line 15: scan_folders: command not found
-#/var/spool/slurmd/job4423074/slurm_script: line 19: OUTPUT: command not found
+#Error: Unknown command line argument: '-b,'
+# Error: invalid option '-o (null)'
