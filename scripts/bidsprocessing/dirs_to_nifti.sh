@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
 #SBATCH -A p31833
-#SBATCH -p normal
-#SBATCH -t 24:00:00
-#SBATCH --mem=10G
-#SBATCH -J python_caller
+#SBATCH -p short
+#SBATCH -t 1:00:00
+#SBATCH --mem=2G
+#SBATCH -J t_nifti
 
 module purge
 import dcm2niix
