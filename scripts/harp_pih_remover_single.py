@@ -4,7 +4,7 @@ import os
 import sys
 
 
-sys.argv[1] = participant
+ participant = sys.argv[1]
 '''
     Creates a dictionary of participants and file paths.
             Parameters:
