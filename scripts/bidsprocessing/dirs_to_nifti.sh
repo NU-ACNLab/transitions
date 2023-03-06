@@ -3,7 +3,7 @@
 #SBATCH -A p31833
 #SBATCH -p short
 #SBATCH -t 1:00:00
-#SBATCH --mem=2G
+#SBATCH --mem=1G
 #SBATCH -J t_nifti
 
 module purge
