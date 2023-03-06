@@ -4,7 +4,7 @@ import os
 import sys
 
 
-partic_path_dict = {}
+sys.argv[1] = participant
 '''
     Creates a dictionary of participants and file paths.
             Parameters:
@@ -19,7 +19,7 @@ def list_participants():
             print(partic)
             fpartic = partic.split("-")[1]
             path = work_dir + "/" + partic + "/ses-1"
-            partic_path_dict[fpartic] = path
+            #partic_path_dict[fpartic] = path
         
 '''
     Removes participant name from file names. 
@@ -182,26 +182,14 @@ def move_to_folders(participant, directory):
 
 
 def main():
-    #asks user to input a directory
-    path = input("Please enter the directory, without quotes:\n")
-    
-    #try:
-    list_participants()
-    #except:
-        #print("Partic dict failed to be created.")
-        #sys.exit()
-    for key, value in partic_path_dict.items():
-        remove_name(key, value)
-        makedir(key, value)
-        rename_partic(key, value)
-        move_to_folders(key, value)
+    key = participant
+    value = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/rename/sub-" + participant + "/ses-1" 
+    remove_name(key, value)
+    makedir(key, value)
+    rename_partic(key, value)
+    move_to_folders(key, value)
 
-    #try:
-        #makedir(participant, directory)
-        #rename_partic(participant, directory)
-        #move_to_folders(participant, directory)
-    #except:
-        #print("Rename files failed for " + participant)
+
 
 if __name__ == "__main__":
     main()
