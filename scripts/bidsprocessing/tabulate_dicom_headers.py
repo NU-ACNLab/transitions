@@ -33,7 +33,8 @@ def find_dicom_dir(subdirs):
     for subdir in subdirs: #for participant dir
         subject = subdir.split("/")[-1][0:5].lower()
         print(subject + "!!!")
-        sub_folder = os.listdir(subdir) #previously sessions
+        print("subdir is : " + subdir)
+        sub_folder = glob.glob(subdir) #previously sessions
         print("sub folders:")
         print(sub_folder)
         e_folder = glob.glob(subdir + "/e*")
