@@ -32,22 +32,25 @@ param_dict = {
 def find_dicom_dir(subdirs):
     for subdir in subdirs: #for participant dir
         subject = subdir.split("/")[-1][0:5].lower()
-        print(subject)
+        print(subject + "!!!")
         sub_folder = os.listdir(subdir) #previously sessions
+        print("sub folders:")
+        print(sub_folder)
         e_folder = glob.glob(subdir + "/e*")
         print("length of e " + str(len(e_folder)))
         if((subdir + "/" + subject in sub_folder)):
             sequences = os.listdir(subdir + "/" + subject)
+            print(sequences)
             for seq in sequences:
                 print("call tab old metho")
                 tabulate(subject, seq)
         elif(len(e_folder) > 0):
+            print(sequences)
             sequences = os.listdir(e_folder[0])
             for seq in sequences:
                 if(os.path.exists(seq + "/MR")):
                     print("call tab new method")
                     tabulate(subject, seq + "/MR")
-
         else:
             print("Unable to unpack subject " + subject)
 
