@@ -15,6 +15,8 @@ import glob
 param_dict = {
     'subid':[],
     'sesid':[],
+    'PatientID':[],
+    'SeriesDescription':[],
     'Modality':[],
     'AcquisitionDate':[],
     'SeriesNumber':[],
@@ -86,7 +88,7 @@ def tabulate(subject, dicomdir):
             else:
                 param_dict['AcquisitionDate'].append('NA')
             if hasattr(dcm, 'PatientID'):
-                param_dict['PatientID'].append(dcm.PatientID)
+                param_dict['PatientID'].append(dcm.PatientID)  #(0010, 0020)
             else:
                 param_dict['PatientID'].append('NA')
             if hasattr(dcm, 'SeriesDescription'):
