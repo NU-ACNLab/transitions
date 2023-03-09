@@ -42,10 +42,10 @@ def find_dicom_dir(subdirs):
     for subdir in subdirs: #for participant dir
         subject = subdir.split("/")[-1][0:5].lower()
         print(subject + "!!!")
-        print("subdir is : " + subdir)
+        #print("subdir is : " + subdir)
         sub_folder = glob.glob(subdir + "/*") #previously sessions
-        print("sub folders:")
-        print(sub_folder)
+        #print("sub folders:")
+        #print(sub_folder)
         e_folder = glob.glob(subdir + "/e*")
         print("length of e " + str(len(e_folder)))
         if((subdir + "/" + subject in sub_folder)):
@@ -71,7 +71,7 @@ def tabulate(subject, dicomdir):
     sub = subject
     session = "ses-1" #will need to modify when there are multiple sessions
     dicoms = glob.glob(dicomdir + "/*")
-    print(dicoms)
+    #print(dicoms)
     dcm_path = dicoms[0] ## search for MRDC??
     #if len(dcm_path) == 0:
     #    dcm_path = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[0]
@@ -79,7 +79,7 @@ def tabulate(subject, dicomdir):
     if len(dcm_path) > 0:  #check if folder is non-empty
         dcm = pydicom.dcmread(dcm_path, force = True)  #going to have to add force = True
         param_dict['subid'].append(sub)
-        param_dict['sesid'].append(ses)
+        param_dict['sesid'].append(session)
         if hasattr(dcm, 'AcquisitionDate'):
             param_dict['AcquisitionDate'].append(dcm.AcquisitionDate)
         else:
