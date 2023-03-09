@@ -72,56 +72,57 @@ def tabulate(subject, dicomdir):
     session = "ses-1" #will need to modify when there are multiple sessions
     dicoms = glob.glob(dicomdir + "/*")
     #print(dicoms)
-    dcm_path = dicoms[0] ## search for MRDC??
-    #if len(dcm_path) == 0:
-    #    dcm_path = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[0]
-    #    dicoms = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[:-1]
-    if len(dcm_path) > 0:  #check if folder is non-empty
-        dcm = pydicom.dcmread(dcm_path, force = True)  #going to have to add force = True
-        param_dict['subid'].append(sub)
-        param_dict['sesid'].append(session)
-        if hasattr(dcm, 'AcquisitionDate'):
-            param_dict['AcquisitionDate'].append(dcm.AcquisitionDate)
-        else:
-            param_dict['AcquisitionDate'].append('NA')
-        if hasattr(dcm, 'SeriesNumber'):
-            param_dict['SeriesNumber'].append(dcm.SeriesNumber)
-        else:
-            param_dict['SeriesNumber'].append('NA')
-        if hasattr(dcm, 'EchoNumbers'):
-            param_dict['EchoNumbers'].append(dcm.EchoNumbers)
-        else:
-            param_dict['EchoNumbers'].append('NA')
-        if hasattr(dcm, 'EchoTime'):
-            param_dict['EchoTime'].append(dcm.EchoTime)
-        else:
-            param_dict['EchoTime'].append('NA')
-        if hasattr(dcm, 'FlipAngle'):
-            param_dict['FlipAngle'].append(dcm.FlipAngle)
-        else:
-            param_dict['FlipAngle'].append('NA')
-        #param_dict['ImageType'].append(dcm.ImageType)
-        if hasattr(dcm, 'InPlanePhaseEncodingDirection'):
-            param_dict['InPlanePhaseEncodingDirection'].append(dcm.InPlanePhaseEncodingDirection)
-        else:
-            param_dict['InPlanePhaseEncodingDirection'].append('NA')
-        param_dict['Modality'].append(dcm.Modality)
-        param_dict['ProtocolName'].append(dcm.ProtocolName)
-        if hasattr(dcm, 'RepetitionTime'):
-            param_dict['RepetitionTime'].append(dcm.RepetitionTime)
-        else:
-            param_dict['RepetitionTime'].append('NA')
-        if hasattr(dcm, 'SequenceName'):
-            param_dict['SequenceName'].append(dcm.SequenceName)
-        else:
-            param_dict['SequenceName'].append('NA')
-        if hasattr(dcm, 'SliceThickness'):
-            param_dict['SliceThickness'].append(dcm.SliceThickness)
-        else:
-            param_dict['SliceThickness'].append('NA')
-        # Count the number of dicoms in the dicom directory
-        ndicoms = len(dicoms)
-        param_dict['NDicoms'].append(ndicoms)
+    if len(dicoms) > 0:
+        dcm_path = dicoms[0] ## search for MRDC??
+        #if len(dcm_path) == 0:
+        #    dcm_path = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[0]
+        #    dicoms = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[:-1]
+        if len(dcm_path) > 0:  #check if folder is non-empty
+            dcm = pydicom.dcmread(dcm_path, force = True)  #going to have to add force = True
+            param_dict['subid'].append(sub)
+            param_dict['sesid'].append(session)
+            if hasattr(dcm, 'AcquisitionDate'):
+                param_dict['AcquisitionDate'].append(dcm.AcquisitionDate)
+            else:
+                param_dict['AcquisitionDate'].append('NA')
+            if hasattr(dcm, 'SeriesNumber'):
+                param_dict['SeriesNumber'].append(dcm.SeriesNumber)
+            else:
+                param_dict['SeriesNumber'].append('NA')
+            if hasattr(dcm, 'EchoNumbers'):
+                param_dict['EchoNumbers'].append(dcm.EchoNumbers)
+            else:
+                param_dict['EchoNumbers'].append('NA')
+            if hasattr(dcm, 'EchoTime'):
+                param_dict['EchoTime'].append(dcm.EchoTime)
+            else:
+                param_dict['EchoTime'].append('NA')
+            if hasattr(dcm, 'FlipAngle'):
+                param_dict['FlipAngle'].append(dcm.FlipAngle)
+            else:
+                param_dict['FlipAngle'].append('NA')
+            #param_dict['ImageType'].append(dcm.ImageType)
+            if hasattr(dcm, 'InPlanePhaseEncodingDirection'):
+                param_dict['InPlanePhaseEncodingDirection'].append(dcm.InPlanePhaseEncodingDirection)
+            else:
+                param_dict['InPlanePhaseEncodingDirection'].append('NA')
+            param_dict['Modality'].append(dcm.Modality)
+            param_dict['ProtocolName'].append(dcm.ProtocolName)
+            if hasattr(dcm, 'RepetitionTime'):
+                param_dict['RepetitionTime'].append(dcm.RepetitionTime)
+            else:
+                param_dict['RepetitionTime'].append('NA')
+            if hasattr(dcm, 'SequenceName'):
+                param_dict['SequenceName'].append(dcm.SequenceName)
+            else:
+                param_dict['SequenceName'].append('NA')
+            if hasattr(dcm, 'SliceThickness'):
+                param_dict['SliceThickness'].append(dcm.SliceThickness)
+            else:
+                param_dict['SliceThickness'].append('NA')
+            # Count the number of dicoms in the dicom directory
+            ndicoms = len(dicoms)
+            param_dict['NDicoms'].append(ndicoms)
 
 def main():
     indir = '/projects/b1108/studies/transitions2/data/raw/neuroimaging/dicoms/uncompressed'
