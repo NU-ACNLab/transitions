@@ -35,7 +35,7 @@ def find_dicom_dir(subdirs):
         print(subject)
         sub_folder = os.listdir(subdir) #previously sessions
         e_folder = glob.glob(subdir + "/e*")
-        print("length of e " + e_folder)
+        print("length of e " + len(e_folder))
         if((subdir + "/" + subject in sub_folder)):
             sequences = os.listdir(subdir + "/" + subject)
             for seq in sequences:
