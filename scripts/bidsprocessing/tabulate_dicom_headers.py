@@ -67,7 +67,7 @@ def find_dicom_dir(subdirs):
 
 def tabulate(subject, dicomdir):
     print(subject)
-    print(session)
+    print(dicomdir)
     sub = subject
     session = "ses-1" #will need to modify when there are multiple sessions
     dicoms = glob.glob(dicomdir)
