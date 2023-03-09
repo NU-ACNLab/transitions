@@ -34,7 +34,7 @@ def find_dicom_dir(subdirs):
         subject = subdir.split("/")[-1][0:5].lower()
         print(subject + "!!!")
         print("subdir is : " + subdir)
-        sub_folder = glob.glob(subdir) #previously sessions
+        sub_folder = glob.glob(subdir + "/*") #previously sessions
         print("sub folders:")
         print(sub_folder)
         e_folder = glob.glob(subdir + "/e*")
@@ -43,7 +43,7 @@ def find_dicom_dir(subdirs):
             sequences = os.listdir(subdir + "/" + subject)
             print(sequences)
             for seq in sequences:
-                print("call tab old metho")
+                print("call tab old method")
                 tabulate(subject, seq)
         elif(len(e_folder) > 0):
             print(sequences)
