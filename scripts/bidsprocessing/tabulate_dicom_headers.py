@@ -70,7 +70,7 @@ def tabulate(subject, dicomdir):
     print(dicomdir)
     sub = subject
     session = "ses-1" #will need to modify when there are multiple sessions
-    dicoms = glob.glob(dicomdir)
+    dicoms = glob.glob(dicomdir + "/*")
     dcm_path = dicoms[0] ## search for MRDC??
     #if len(dcm_path) == 0:
     #    dcm_path = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[0]
