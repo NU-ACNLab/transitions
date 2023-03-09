@@ -53,7 +53,7 @@ def find_dicom_dir(subdirs):
             print(sequences)
             for seq in sequences:
                 print("call tab old method")
-                tabulate(subject, seq)
+                tabulate(subject, seq + "/MR")
         elif(len(e_folder) > 0):
             print(sequences)
             sequences = os.listdir(e_folder[0])
