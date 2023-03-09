@@ -66,10 +66,12 @@ def find_dicom_dir(subdirs):
 
 
 def tabulate(subject, dicomdir):
+    print(subject)
+    print(session)
     sub = subject
     session = "ses-1" #will need to modify when there are multiple sessions
     dicoms = glob.glob(dicomdir)
-    dcm_path = dicoms[0]## search for MRDC??
+    dcm_path = dicoms[0] ## search for MRDC??
     #if len(dcm_path) == 0:
     #    dcm_path = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[0]
     #    dicoms = os.popen('find '+dicomdir+' -regex ".*/[0-9]+"').read().split("\n")[:-1]
