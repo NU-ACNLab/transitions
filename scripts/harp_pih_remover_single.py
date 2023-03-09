@@ -4,7 +4,7 @@ import os
 import sys
 
 
- participant = sys.argv[1]
+participant = sys.argv[1]
 '''
     Creates a dictionary of participants and file paths.
             Parameters:
@@ -183,7 +183,7 @@ def move_to_folders(participant, directory):
 
 def main():
     key = participant
-    value = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/rename/sub-" + participant + "/ses-1" 
+    value = "/projects/b1108/studies/transitions/data/raw/neuroimaging/bids/sub-" + participant + "/ses-1" 
     remove_name(key, value)
     makedir(key, value)
     rename_partic(key, value)
