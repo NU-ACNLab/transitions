@@ -85,6 +85,14 @@ def tabulate(subject, dicomdir):
                 param_dict['AcquisitionDate'].append(dcm.AcquisitionDate)
             else:
                 param_dict['AcquisitionDate'].append('NA')
+            if hasattr(dcm, 'PatientID'):
+                param_dict['PatientID'].append(dcm.PatientID)
+            else:
+                param_dict['PatientID'].append('NA')
+            if hasattr(dcm, 'SeriesDescription'):
+                param_dict['SeriesDescription'].append(dcm.SeriesDescription)
+            else:
+                param_dict['SeriesDescription'].append('NA')
             if hasattr(dcm, 'SeriesNumber'):
                 param_dict['SeriesNumber'].append(dcm.SeriesNumber)
             else:
